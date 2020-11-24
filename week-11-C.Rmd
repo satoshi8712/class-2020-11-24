@@ -28,6 +28,18 @@ primary_06 ~ solo + primary_04 + treatment + solo:treatment
 
 (Assume that you have already completed a cross-validation analysis and chosen this one model to use going forward.)
 
+```{r sc1-a, cache=TRUE}
+
+fit_1 <- stan_glm(formula = primary_06 ~ solo + primary_04 + treatment + solo:treatment,
+                  data = week_11, 
+                  refresh = 0)
+```
+
+```{r}
+ print(fit_1, digits = 3)
+```
+
+
 * Which data set should you use to fit the model? Explain why.
 
 * Interpret the fitted model. Should we keep all these variables? And the interaction term?
